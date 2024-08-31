@@ -171,12 +171,12 @@ func (tw traceware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add(tw.traceResponseHeaderKey, span.SpanContext().TraceID().String())
 	}
 
-	r2 := r.WithContext(ctx)
 	rrw := getRRW(w)
 	defer putRRW(rrw)
 
 	ctx = context.WithValue(ctx, "trace-id", span.SpanContext().TraceID().String())
-
+	r2 := r.WithContext(ctx)
+	
 	tw.handler.ServeHTTP(rrw.writer, r2)
 	if rrw.status > 0 {
 		span.SetAttributes(semconv.HTTPStatusCode(rrw.status))
