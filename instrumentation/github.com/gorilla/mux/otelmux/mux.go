@@ -48,27 +48,29 @@ func Middleware(service string, opts ...Option) mux.MiddlewareFunc {
 
 	return func(handler http.Handler) http.Handler {
 		return traceware{
-			service:           service,
-			tracer:            tracer,
-			propagators:       cfg.Propagators,
-			handler:           handler,
-			spanNameFormatter: cfg.spanNameFormatter,
-			publicEndpoint:    cfg.PublicEndpoint,
-			publicEndpointFn:  cfg.PublicEndpointFn,
-			filters:           cfg.Filters,
+			service:                service,
+			tracer:                 tracer,
+			propagators:            cfg.Propagators,
+			handler:                handler,
+			spanNameFormatter:      cfg.spanNameFormatter,
+			publicEndpoint:         cfg.PublicEndpoint,
+			publicEndpointFn:       cfg.PublicEndpointFn,
+			filters:                cfg.Filters,
+			traceResponseHeaderKey: cfg.TraceResponseHeaderKey,
 		}
 	}
 }
 
 type traceware struct {
-	service           string
-	tracer            trace.Tracer
-	propagators       propagation.TextMapPropagator
-	handler           http.Handler
-	spanNameFormatter func(string, *http.Request) string
-	publicEndpoint    bool
-	publicEndpointFn  func(*http.Request) bool
-	filters           []Filter
+	service                string
+	tracer                 trace.Tracer
+	propagators            propagation.TextMapPropagator
+	handler                http.Handler
+	spanNameFormatter      func(string, *http.Request) string
+	publicEndpoint         bool
+	publicEndpointFn       func(*http.Request) bool
+	filters                []Filter
+	traceResponseHeaderKey string
 }
 
 type recordingResponseWriter struct {
@@ -164,6 +166,11 @@ func (tw traceware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	spanName := tw.spanNameFormatter(routeStr, r)
 	ctx, span := tw.tracer.Start(ctx, spanName, opts...)
 	defer span.End()
+
+	if len(tw.traceResponseHeaderKey) > 0 && span.SpanContext().HasTraceID() {
+		w.Header().Add(tw.traceResponseHeaderKey, span.SpanContext().TraceID().String())
+	}
+
 	r2 := r.WithContext(ctx)
 	rrw := getRRW(w)
 	defer putRRW(rrw)

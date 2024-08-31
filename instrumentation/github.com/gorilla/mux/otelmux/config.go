@@ -10,14 +10,17 @@ import (
 	oteltrace "go.opentelemetry.io/otel/trace"
 )
 
+const defaultTraceResponseHeaderKey = "X-Trace-Id"
+
 // config is used to configure the mux middleware.
 type config struct {
-	TracerProvider    oteltrace.TracerProvider
-	Propagators       propagation.TextMapPropagator
-	spanNameFormatter func(string, *http.Request) string
-	PublicEndpoint    bool
-	PublicEndpointFn  func(*http.Request) bool
-	Filters           []Filter
+	TracerProvider         oteltrace.TracerProvider
+	Propagators            propagation.TextMapPropagator
+	spanNameFormatter      func(string, *http.Request) string
+	PublicEndpoint         bool
+	PublicEndpointFn       func(*http.Request) bool
+	Filters                []Filter
+	TraceResponseHeaderKey string
 }
 
 // Option specifies instrumentation configuration options.
@@ -52,6 +55,19 @@ func WithPublicEndpoint() Option {
 func WithPublicEndpointFn(fn func(*http.Request) bool) Option {
 	return optionFunc(func(c *config) {
 		c.PublicEndpointFn = fn
+	})
+}
+
+// WithTraceIDResponseHeader enables adding trace id into response header.
+// It accepts a function that generates the header key name. If this parameter
+// function set to `nil` the default header key which is `X-Trace-Id` will be used.
+func WithTraceIDResponseHeader(headerKeyFunc func() string) Option {
+	return optionFunc(func(cfg *config) {
+		if headerKeyFunc == nil {
+			cfg.TraceResponseHeaderKey = defaultTraceResponseHeaderKey // use default trace header
+		} else {
+			cfg.TraceResponseHeaderKey = headerKeyFunc()
+		}
 	})
 }
 
