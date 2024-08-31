@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux/example
+module github.com/kitabisa/opentelemetry-go-contrib/instrumentation/github.com/gorilla/mux/otelmux/example
 
 go 1.22
 
