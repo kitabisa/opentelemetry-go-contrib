@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/bridges/otelzap
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/bridges/otelzap
 
 go 1.22
 

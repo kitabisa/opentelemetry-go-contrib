@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/config
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/config
 
 go 1.22
 

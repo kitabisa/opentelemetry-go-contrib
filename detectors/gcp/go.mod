@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/detectors/gcp
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/detectors/gcp
 
 go 1.22
 

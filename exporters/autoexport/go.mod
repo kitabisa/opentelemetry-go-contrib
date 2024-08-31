@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/exporters/autoexport
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/exporters/autoexport
 
 go 1.22
 

@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrumentation/runtime/test
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/runtime/test
 
 go 1.22
 

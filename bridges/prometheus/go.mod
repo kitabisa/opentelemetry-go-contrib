@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/bridges/prometheus
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/bridges/prometheus
 
 go 1.22
 

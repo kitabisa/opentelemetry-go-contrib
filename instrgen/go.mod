@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrgen
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrgen
 
 go 1.22
 

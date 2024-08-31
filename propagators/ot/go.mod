@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/propagators/ot
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/propagators/ot
 
 go 1.22
 

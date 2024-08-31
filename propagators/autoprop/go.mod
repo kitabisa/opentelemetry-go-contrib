@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/propagators/autoprop
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/propagators/autoprop
 
 go 1.22
 

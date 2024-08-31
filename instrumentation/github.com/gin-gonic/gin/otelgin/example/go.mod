@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin/example
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/github.com/gin-gonic/gin/otelgin/example
 
 go 1.22
 

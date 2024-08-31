@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/detectors/aws/lambda
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/detectors/aws/lambda
 
 go 1.22
 

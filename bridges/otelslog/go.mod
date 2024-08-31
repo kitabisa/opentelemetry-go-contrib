@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/bridges/otelslog
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/bridges/otelslog
 
 go 1.22
 

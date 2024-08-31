@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/detectors/azure/azurevm
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/detectors/azure/azurevm
 
 go 1.22
 

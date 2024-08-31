@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/samplers/probability/consistent
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/samplers/probability/consistent
 
 go 1.22
 

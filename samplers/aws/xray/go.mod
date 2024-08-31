@@ -1,5 +1,5 @@
 // Deprecated: xray has no Code Owner.
-module go.opentelemetry.io/contrib/samplers/aws/xray
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/samplers/aws/xray
 
 go 1.22
 

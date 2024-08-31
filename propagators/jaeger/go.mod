@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/propagators/jaeger
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/propagators/jaeger
 
 go 1.22
 

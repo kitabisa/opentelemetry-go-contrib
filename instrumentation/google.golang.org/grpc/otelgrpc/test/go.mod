@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc/test
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/google.golang.org/grpc/otelgrpc/test
 
 go 1.22
 

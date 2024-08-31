@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/propagators/aws
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/propagators/aws
 
 go 1.22
 

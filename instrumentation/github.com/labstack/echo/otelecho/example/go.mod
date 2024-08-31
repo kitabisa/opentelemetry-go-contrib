@@ -1,5 +1,5 @@
 // Deprecated: otelecho has no Code Owner.
-module go.opentelemetry.io/contrib/instrumentation/github.com/labstack/echo/otelecho/example
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/github.com/labstack/echo/otelecho/example
 
 go 1.22
 

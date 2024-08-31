@@ -1,5 +1,5 @@
 // Deprecated: otelmacaron has no Code Owner.
-module go.opentelemetry.io/contrib/instrumentation/gopkg.in/macaron.v1/otelmacaron
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/gopkg.in/macaron.v1/otelmacaron
 
 go 1.22
 

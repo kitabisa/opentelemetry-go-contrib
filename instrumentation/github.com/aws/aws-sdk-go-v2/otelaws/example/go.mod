@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrumentation/github.com/aws/aws-sdk-go-v2/otelaws/example
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/github.com/aws/aws-sdk-go-v2/otelaws/example
 
 go 1.22
 

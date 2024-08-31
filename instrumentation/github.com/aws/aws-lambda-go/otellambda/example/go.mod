@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrumentation/github.com/aws/aws-lambda-go/otellambda/example
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/github.com/aws/aws-lambda-go/otellambda/example
 
 go 1.22
 

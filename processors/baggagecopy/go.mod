@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/processors/baggagecopy
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/processors/baggagecopy
 
 go 1.22
 

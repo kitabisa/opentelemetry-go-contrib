@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrumentation/host/example
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/host/example
 
 go 1.22
 

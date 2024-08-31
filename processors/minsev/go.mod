@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/processors/minsev
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/processors/minsev
 
 go 1.22
 

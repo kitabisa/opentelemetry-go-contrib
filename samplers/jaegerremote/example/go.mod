@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/samplers/jaegerremote/example
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/samplers/jaegerremote/example
 
 go 1.22
 

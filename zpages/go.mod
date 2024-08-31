@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/zpages
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/zpages
 
 go 1.22
 

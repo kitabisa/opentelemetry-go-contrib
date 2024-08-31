@@ -1,4 +1,4 @@
-module go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp/example
+module github.com/kitabisa/opentelemetry-go-contrib/contrib/instrumentation/net/http/otelhttp/example
 
 go 1.22
 
