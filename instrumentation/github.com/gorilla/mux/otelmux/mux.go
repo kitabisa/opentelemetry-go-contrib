@@ -4,6 +4,7 @@
 package otelmux // import "go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux"
 
 import (
+	"context"
 	"fmt"
 	"net/http"
 	"sync"
@@ -166,6 +167,9 @@ func (tw traceware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	r2 := r.WithContext(ctx)
 	rrw := getRRW(w)
 	defer putRRW(rrw)
+
+	ctx = context.WithValue(ctx, "trace-id", span.SpanContext().TraceID().String())
+
 	tw.handler.ServeHTTP(rrw.writer, r2)
 	if rrw.status > 0 {
 		span.SetAttributes(semconv.HTTPStatusCode(rrw.status))
